@@ -6,9 +6,9 @@ import Cards from './cards';
 
 const Hero = () => (
   <>
-    <Grid container spacing={2} sx={{ pt: 8, px: { xs: 2, md: 8 }, alignItems: 'center', position: 'relative' }}>
+    <Grid container spacing={2} sx={{ pt: 8, px: { xs: 0, sm:6 , md: 8 }, alignItems: 'center', position: 'relative' }}>
       <Grid item xs={12} md={6} sx={{ position: { md: 'absolute' }, left: { md: 60 }, top: { md: 40 }, width: { md: '50%' } }}>
-        <Box sx={{ p: { xs: 2, md: 4 }, borderRadius: 2, maxWidth: 700 }}>
+        <Box sx={{ p: { xs: 2, md: 0 }, borderRadius: 2, maxWidth: 700 }}>
           <Typography variant="h4" color="white" fontWeight={700} gutterBottom>
             IIGS exemplifies its dedication to sustainability through innovative procurement and supply chain practices that boost operational efficiency and drive industry-leading innovation
           </Typography>
