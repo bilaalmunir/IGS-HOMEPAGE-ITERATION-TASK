@@ -73,7 +73,7 @@ const Navbar2 = () => {
       <Toolbar sx={{ minHeight: 56, px: 2, justifyContent: "space-between" }}>
         <Box
           sx={{
-            height: { xs: 24, sm: 32, md: 40, lg: 48 },
+            height: { xs: 24, sm: 32, md: 40, lg: 40 },
             width: "auto",
             display: "flex",
             alignItems: "center",
