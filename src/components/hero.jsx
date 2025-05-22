@@ -6,9 +6,9 @@ import Cards from './cards';
 
 const Hero = () => (
   <>
-    <Grid container spacing={2} sx={{ pt: 8, px: { xs: 0, sm:6 , md: 8 }, alignItems: 'center', position: 'relative' }}>
-      <Grid item xs={12} md={6} sx={{ position: { md: 'absolute' }, left: { md: 60 }, top: { md: 40 }, width: { md: '50%' } }}>
-        <Box sx={{ p: { xs: 2, md: 0 }, borderRadius: 2, maxWidth: 700 }}>
+    <Grid container spacing={2} sx={{ pt: 8, px: { xs: 1, sm:6 , md: 8 }, alignItems: 'center', position: 'relative' }}>
+      <Grid item xs={12} md={6} sx={{ position: { md: 'absolute' }, left: { md: 60 }, top: { md: 40 }, width: { md: '50%' }, zIndex: 1000 }}>
+        <Box sx={{ p: { xs: 2, md: 0 }, borderRadius: 2, maxWidth: 700, backgroundColor:{ xs: 'rgba(54, 53, 53, 0.26)', md: 'transparent',lg:'transparent'}}}>
           <Typography variant="h4" color="white" fontWeight={700} gutterBottom>
             IIGS exemplifies its dedication to sustainability through innovative procurement and supply chain practices that boost operational efficiency and drive industry-leading innovation
           </Typography>
@@ -30,7 +30,7 @@ const Hero = () => (
         position: 'absolute',
         bottom: 0,
         right: 0,
-        width: { xs: 180, sm: 260, md: 340, lg: 600 },
+        width: { xs: 500, sm: 560, md: 550, lg: 600, },
         pointerEvents: 'none',
         zIndex: 0
       }}
