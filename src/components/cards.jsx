@@ -22,29 +22,30 @@ const cardData = [
 ];
 
 const Cards = () => (
-  <Grid container spacing={3} sx={{ mt: { xs: 6, md: 48 }, mb: { xs: 4, md: 0 }, px: { xs: 2, md: 8 }, justifyContent: 'center', zIndex: 1000,  }}>
+  <Grid container spacing={5} sx={{ mt: { xs: 6, md: 48 }, mb: { xs: 0, md: 0, lg: 0 }, px: { xs: 6, md: 1, }, py:{ xs: 0, md: 9, } , justifyContent: 'center', zIndex: 1000, }}>
     {cardData.map((card, idx) => (
-      <Grid item xs={12} md={4} key={card.title} sx={{ justifyContent: 'center' }}>
+      <Grid item key={card.title} >
         <Box
           sx={{
             bgcolor: 'rgba(97, 95, 95, 0.35)',
-            borderRadius: 3,
-            p: 3,
+            borderRadius: 2,
+            p: 2,
             color: 'white',
-            minHeight: 180,
+            minHeight: 130,
+            minWidth: { xs: '95%', sm: '80%', md: '310px',  },
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
             boxShadow: 3,
             height: '40%',
             backdropFilter: 'blur(1px)',
-            maxWidth: { xs: '95%', sm: '80%', md: '200px', lg: '350px' }
+            maxWidth: { xs: '340px', sm: '400px', md: '310px', lg: '320px' }
           }}
         >
-          <Typography variant="h6" fontWeight={600} sx={{ mb: 1, color: 'white' }}>
+          <Typography variant="h7" fontWeight={600} sx={{ mb: 1, color: 'white' }}>
             {card.title}
           </Typography>
-          <Typography variant="body1" sx={{ mb: 2, color: 'white', fontSize: 16 }}>
+          <Typography variant="body3" sx={{ mb: 1, color: 'white', fontSize: 16 }}>
             {card.desc}
           </Typography>
           <Box>
@@ -54,13 +55,13 @@ const Cards = () => (
                 color: '#F36434',
                 fontWeight: 500,
                 textDecoration: 'none',
-                fontSize: 16,
+                fontSize: 14,
                 display: 'inline-flex',
                 alignItems: 'center',
                 letterSpacing: 0.2,
               }}
             >
-              {card.link.text} <span style={{ fontSize: 22, marginLeft: 4 }}>&#187;</span>
+              {card.link.text} <span style={{ fontSize: 18, marginLeft: 4 }}>&#187;</span>
             </a>
           </Box>
         </Box>

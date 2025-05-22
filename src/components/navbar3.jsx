@@ -1,4 +1,5 @@
 import React from 'react';
+import {useEffect, useState} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Box from '@mui/material/Box';
@@ -40,6 +41,16 @@ const Navbar3 = () => {
   const [anchorEls, setAnchorEls] = React.useState(Array(menuItems.length).fill(null));
   const [selectedIdx, setSelectedIdx] = React.useState(0);
   const [mobileMenuAnchor, setMobileMenuAnchor] = React.useState(null);
+  const [sticky, setSticky] = useState(false);
+
+
+useEffect(() => {
+  const handleScroll = () => {
+    setSticky(window.scrollY > 30);
+  };
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
 
   // Desktop handlers
   const handleMenuOpen = (index, event) => {
@@ -68,7 +79,18 @@ const Navbar3 = () => {
 
 
   return (
-    <AppBar position="static" color="transparent" sx={{ minHeight: 48, bgcolor: 'transparent', position:'sticky', top:0, zIndex:1000 }} elevation={0}>
+    <AppBar
+  position="sticky"
+  color="transparent"
+  sx={{
+    minHeight: 48,
+    bgcolor: sticky ? '#111827' : 'transparent',
+    top: 0,
+    zIndex: 1000,
+    transition: 'background-color 0.3s ease',
+  }}
+  elevation={0}
+>
       <Toolbar sx={{ minHeight: 48, px: 0 }}>
         {/* Desktop Menu */}
         {!isMobile && (
@@ -101,7 +123,7 @@ const Navbar3 = () => {
         )}
         {/* Mobile Menu: Only show selected item as a full-width banner, clicking opens dropdown of all items */}
         {isMobile && (
-          <Box sx={{ width: '100%', display: 'flex' }}>
+          <Box sx={{ width: '100%', display: 'flex', zIndex:1000 }}>
             <Box
               onClick={handleMobileMenuOpen}
               sx={{
